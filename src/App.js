@@ -1,12 +1,13 @@
 import React from 'react';
 import CardsDeck from "./Cards/CardsDeck";
-import Card from "./Card/Card";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
       <CardsDeck/>
-    </div>
+      </div>
+
   );
 }
 
