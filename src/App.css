@@ -1,9 +1,17 @@
 .App {
-    display: grid;
+  display: grid;
+  background-color: #ff8c69;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  will-change: transform;
+  align-items: center;
+  justify-content: center;
+  grid-gap: 10px;
 }
 
-@media(min-width:600px) {
-    .App {
-        display: flex;
-    }
+@media (min-width: 600px) {
+  .App {
+    display: flex;
+  }
 }

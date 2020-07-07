@@ -1,5 +1,4 @@
 import React from "react";
-import "./Card.css";
 import { Swipeable, direction } from 'react-deck-swiper';
 
 
@@ -20,7 +19,7 @@ const Card = ({ name, title, picture, age }) => {
                 <div className="card">
                     <div className="card-container">
                         <img src={picture} />
-                        <div className="card-name">{name}, {age}</div>
+                        <div className="card-details">{name}, {age}</div>
                         <div className="card-title">{title}</div>
                     </div>
                 </div>
