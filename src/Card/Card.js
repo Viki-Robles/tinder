@@ -1,7 +1,7 @@
 import React from "react";
 import "./Card.css";
-import { useSpring, animated } from "react-spring";
-
+import { string, number, array } from "prop-types";
+import { animated, interpolate } from "react-spring";
 
 export default function Card({ name, title, picture, age }) {
     return (
