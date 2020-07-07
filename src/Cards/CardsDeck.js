@@ -6,9 +6,6 @@ import { useSprings, animated, interpolate } from "react-spring";
 import { useGesture } from "react-use-gesture";
 import "./CardsDeck.css";
 
-
-
-
 const to = i => ({
   x: 0,
   y: i * -10,
@@ -26,7 +23,7 @@ const trans = (r, s) =>
 export default function CardsDeck() {
   const [gone] = useState(() => new Set());// The set flags all the cards that are flicked out
 
-  const [props, set] = useSprings(cardsData.length, i => ({
+  const [props, set] = useSprings(cardsData().length, i => ({
     ...to(i),
     from: from(i)
   }));
@@ -43,14 +40,13 @@ export default function CardsDeck() {
     }) => {
       const trigger = velocity > 0.2; //It triggers the card to fly out
       const dir = xDir < 0 ? -1 : 1; //That's the direction of the card left or right
-
-    if (!down && trigger) gone.add(index); // If finger's up and trigger velocity is reached, we flag the
+      if (!down && trigger) gone.add(index); // If finger's up and trigger velocity is reached, we flag the
       set(i => {
         if (index !== i) return;
         const isGone = gone.has(index);
         const x = isGone ? (200 + window.innerWidth) * dir : down ? xDelta : 0;
         const rot = xDelta / 100 + (isGone ? dir * 10 * velocity : 0);
-        const scale = down ? 1.1 : 1;
+        const scale = down ? 1.1 : 1; // Active cards lift up a bit
         return {
           x,
           rot,
@@ -60,7 +56,7 @@ export default function CardsDeck() {
         };
       });
 
-      if (!down && gone.size === cardsData.length)
+      if (!down && gone.size === cardsData().length)
         setTimeout(() => gone.clear() || set(i => to(i)), 600);
     }
   );
