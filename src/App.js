@@ -1,10 +1,11 @@
 import React from 'react';
-import Cards from "./Cards/CardsDeck";
+import CardsDeck from "./Cards/CardsDeck";
+import Card from "./Card/Card";
 
 function App() {
   return (
     <div className="App">
-      <Cards/>
+      <CardsDeck/>
     </div>
   );
 }

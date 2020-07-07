@@ -58,12 +58,6 @@
     border-top-right-radius: 10px;
   }
   
-  button[aria-label="previous"],
-  button[aria-label="next"] {
-    background: salmon !important;
-    color: black !important;
-  }
-  
   h2 {
     display: inline-block;
     margin-right: 10px;

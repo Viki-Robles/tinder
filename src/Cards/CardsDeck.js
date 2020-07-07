@@ -2,7 +2,7 @@ import React from "react";
 import cardsData from "./cardsData";
 import Card from "../Card/Card";
 import { useState } from "react";
-import { useSprings } from "react-spring";
+import { useSprings, animated, interpolate } from "react-spring";
 import { useGesture } from "react-use-gesture";
 import "./CardsDeck.css";
 
@@ -34,7 +34,6 @@ export default function CardsDeck() {
       args: [index],
       down,
       delta: [xDelta],
-      distance,
       direction: [xDir],
       velocity
     }) => {
@@ -66,25 +65,23 @@ export default function CardsDeck() {
         setTimeout(() => gone.clear() || set(i => to(i)), 600);
     }
   );
-  return (
-    <>
-      {
-        cardsData().map(({ x, y, rot, scale, name, age, picture, id }, i) =>
-          <Card
-            key={id}
-            id={id}
-            i={i}
-            x={x}
-            y={y}
-            rot={rot}
-            scale={scale}
-            trans={trans}
-            bind={bind} 
-            name={name}
-            picture={picture}
-            age={age}/>
-        )}
-    </>
-  )
+  return cardsData().map(({ x, y, rot, scale, name, age, picture, id }, i) => (
+    <animated.div key={i} style={{ transform: interpolate([x, y], (x, y) => `translate3d(${x}px,${y}px,0)`) }}>
+      <Card
+        key={id}
+        id={id}
+        i={i}
+        x={x}
+        y={y}
+        rot={rot}
+        scale={scale}
+        trans={trans}
+        bind={bind}
+        name={name}
+        picture={picture}
+        age={age} />
+      <animated.div {...bind(i)} style={{ transform: interpolate([rot, scale], trans), picture: picture }} />
+    </animated.div>
+  ))
 }
 
