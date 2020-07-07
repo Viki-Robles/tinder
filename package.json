@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.2.1",
     "nuka-carousel": "^4.7.0",
     "react": "^16.13.1",
+    "react-deck-swiper": "^1.0.9",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
     "react-spring": "^8.0.27",
