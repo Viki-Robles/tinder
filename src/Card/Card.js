@@ -1,7 +1,6 @@
 import React from "react";
 import "./Card.css";
 import { Swipeable, direction } from 'react-deck-swiper';
-import CardsDeck from "../Cards/CardsDeck";
 
 
 const Card = ({ name, title, picture, age }) => {
@@ -10,7 +9,6 @@ const Card = ({ name, title, picture, age }) => {
             // handle right swipe
             return;
         }
-
         if (swipeDirection === direction.LEFT) {
             // handle left swipe
             return;
