@@ -4,7 +4,7 @@ import Card from "../Card/Card";
 import { useState } from "react";
 import { useSprings } from "react-spring";
 import { useGesture } from "react-use-gesture";
-import "./Deck.css";
+import "./CardsDeck.css";
 
 
 
@@ -21,7 +21,7 @@ const trans = (r, s) =>
   `perspective(1500px) rotateX(30deg) rotateY(${r /
   10}deg) rotateZ(${r}deg) scale(${s})`;
 
-export default function Deck() {
+export default function CardsDeck() {
   const [gone] = useState(() => new Set());
 
   const [props, set] = useSprings(cardsData.length, i => ({
@@ -81,7 +81,8 @@ export default function Deck() {
             trans={trans}
             bind={bind} 
             name={name}
-            picture={picture}/>
+            picture={picture}
+            age={age}/>
         )}
     </>
   )

@@ -1,5 +1,5 @@
 import React from 'react';
-import Cards from "./Cards/Deck";
+import Cards from "./Cards/CardsDeck";
 
 function App() {
   return (
