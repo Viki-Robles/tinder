@@ -2,14 +2,15 @@ import React from 'react';
 import { Swipeable, direction } from 'react-deck-swiper';
 import { useState } from 'react';
 import cardsData from '../Cards/cardsData';
+import { useMove } from 'react-use-gesture';
 
 
 const Card = ({ name, title, picture, age }) => {
-    //let x = useMotionValue();
 
     // Create Swipeable Hooks to control the movement of each card
     const [lastSwipeDirection, setLastSwipeDirection] = useState(null);
     const [card, setCard] = useState(cardsData);
+    let x = useMove();
 
     // Creat a function that will control the Hook State
     const handleOnSwipe = (swipeDirection) => {
@@ -27,9 +28,9 @@ const Card = ({ name, title, picture, age }) => {
     const onDragEnd = () => {
         return function (_, info) {
             if (Math.abs(info.point.x) < 150) {
-                card.start({ x: 0 });
+                x.start({ x: 0 });
             } else {
-                card.start({ x: info.point.x < 0 ? - 200 : 200 });
+                x.start({ x: info.point.x < 0 ? - 200 : 200 });
             }
         }
     };
