@@ -11,6 +11,5 @@ export default function Cards() {
         name={name}
         picture={picture}
         age={age} />
-     
-  ))
+    ))
 }

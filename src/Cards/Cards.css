@@ -11,6 +11,8 @@
     width: 100%;
     user-select: none;
     font-family: Raleway, sans-serif;
+    background: salmon;
+
   }
   
   #root {
