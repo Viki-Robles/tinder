@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Swipeable, direction } from 'react-deck-swiper';
 import { useState } from 'react';
 import cardsData from '../Cards/cardsData';
@@ -23,8 +23,7 @@ const Card = ({ name, title, picture, age }) => {
                 setCard((prev) => prev.slice(1));
     };
 
-    //Create an onDrag function to make the card dissapear when is surpassing the x initial limit.
-    // x needs to be defined with useMotion
+    //Create an onDrag function so that the card will dissapear when is surpassing the x initial point limit.
     const onDragEnd = () => {
         return function (_, info) {
             if (Math.abs(info.point.x) < 150) {

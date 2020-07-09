@@ -1,7 +1,7 @@
-import builder1 from '../Cards/images/builder1.png';
-import builder2 from '../Cards/images/builder2.png';
-import builder3 from '../Cards/images/builder3.png';
-import builder4 from '../Cards/images/builder4.png';
+import builder1 from '../Cards/images/picture1.png';
+import builder2 from '../Cards/images/picture2.png';
+import builder3 from '../Cards/images/picture3.png';
+import builder4 from '../Cards/images/picture4.png';
 
 export default function cardsData() {
     return [
