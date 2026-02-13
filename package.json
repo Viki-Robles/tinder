@@ -11,7 +11,7 @@
     "react": "^16.13.1",
     "react-deck-swiper": "^1.0.9",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
+    "react-scripts": "5.0.1",
     "react-spring": "^8.0.27",
     "react-swipe": "^6.0.4",
     "react-swipeable-views": "^0.13.9",
